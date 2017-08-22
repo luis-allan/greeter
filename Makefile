@@ -1,6 +1,6 @@
 
 SHELL := /bin/bash
-VERSION = $(shell git describe --tags --always --dirty)
+VERSION = $(shell git describe --tags --always --dirty --abbrev=12)
 BUILDDATE = $(shell date +%s)
 EXECUTABLE = greeter
 PKG = github.com/thingful/${EXECUTABLE}
@@ -27,3 +27,11 @@ build-internal: ## Build our Go executable. Note this is designed to be run insi
 .PHONY: build
 build: ## Package our app inside a container using docker-compose
 	docker-compose build
+
+.PHONY: tag
+tag: ## Push the latest container build to docker hub
+	docker tag thingful/greeter:latest thingful/greeter:${VERSION}
+
+.PHONY: push
+push: tag
+	docker push thingful/greeter
