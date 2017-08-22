@@ -1,0 +1,9 @@
+version: "3.0"
+
+services:
+  app:
+    build:
+      context: .
+    image: thingful/greeter
+    ports:
+      - "5555:5555"
