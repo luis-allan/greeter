@@ -29,7 +29,7 @@ build: ## Package our app inside a container using docker-compose
 	docker-compose build
 
 .PHONY: tag
-tag: ## Push the latest container build to docker hub
+tag: build ## Push the latest container build to docker hub
 	docker tag thingful/greeter:latest thingful/greeter:${VERSION}
 
 .PHONY: push
