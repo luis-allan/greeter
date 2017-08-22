@@ -8,6 +8,12 @@
   revision = "ab9f9a6dab164b7d1246e0e688b0ab7b94d8553e"
 
 [[projects]]
+  name = "github.com/soheilhy/cmux"
+  packages = ["."]
+  revision = "bb79a83465015a27a175925ebd155e660f55e9f1"
+  version = "v0.1.3"
+
+[[projects]]
   branch = "master"
   name = "golang.org/x/net"
   packages = ["context","http2","http2/hpack","idna","internal/timeseries","lex/httplex","trace"]
@@ -34,6 +40,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "fe7ebfe5d12e28ce1d3aa032fce9686ee6d080a7f21ca94584f08cd74a5028de"
+  inputs-digest = "79df984eb64d22f559e1a2118ba989025adcd9b786d869ba8c348be47bcf287c"
   solver-name = "gps-cdcl"
   solver-version = 1
