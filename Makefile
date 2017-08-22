@@ -21,10 +21,8 @@ protoc: ## Compile proto definitions to generate client/server code
 
 .PHONY: build-internal
 build-internal: ## Build our Go executable. Note this is designed to be run inside the container
-	export CGO_ENABLED=0
-	export GOOS=linux
 	mkdir -p $(BUILD_DIR)
-	go build ${BUILDFLAGS} -o ${BUILD_DIR}/${EXECUTABLE} ${PKG}/pkg/server
+	CGO_ENABLED=0 GOOS=linux go build ${BUILDFLAGS} -o ${BUILD_DIR}/${EXECUTABLE} ${PKG}/pkg/server
 
 .PHONY: build
 build: ## Package our app inside a container using docker-compose
